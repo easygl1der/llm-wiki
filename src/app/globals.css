@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  code, pre {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  }
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #52525b;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #71717a;
+  }
+}
+
+@layer components {
+  .wiki-link {
+    @apply text-primary-500 hover:text-primary-400 underline decoration-dotted underline-offset-2 transition-colors;
+  }
+
+  /* Obsidian collapsible sections */
+  .obsidian-collapse summary {
+    list-style: none;
+  }
+  .obsidian-collapse summary::-webkit-details-marker {
+    display: none;
+  }
+  .obsidian-collapse summary .collapse-arrow {
+    transform: rotate(-90deg);
+    display: inline-flex;
+    transition: transform 0.2s ease;
+  }
+  .obsidian-collapse[open] summary .collapse-arrow {
+    transform: rotate(0deg);
+  }
+}
